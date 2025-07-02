@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Permintaan Maaf untuk Pacar</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #ffe2e2; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+        }
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(255,0,60,0.13);
+            text-align: center;
+        }
+        h1 { color: #e63946; }
+        textarea { width: 100%; min-height: 100px; border-radius: 8px; border: 1px solid #ddd; padding: 10px;}
+        button {
+            margin-top: 15px;
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            background: #f1faee;
+            border-radius: 8px;
+            padding: 15px;
+            color: #1d3557;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minta Maaf ke Pacar</h1>
+        <p>Tulis pesan tambahan (opsional):</p>
+        <textarea id="extraMessage" placeholder="Isi jika ingin menambah pesan khusus..."></textarea>
+        <br>
+        <button onclick="generateMaaf()">Buat Pesan Maaf</button>
+        <div class="result" id="resultMaaf" style="display:none;"></div>
+    </div>
+
+    <script>
+        function generateMaaf() {
+            const tambahan = document.getElementById('extraMessage').value.trim();
+            let pesan = `Hai sayang,\n\nAku mau minta maaf atas sikap dan kata-kataku kemarin. Aku sadar aku telah menyakitimu, dan itu bukan hal yang aku inginkan sama sekali. Aku benar-benar menyesal dan aku harap kamu bisa memaafkanku. Aku janji akan berusaha jadi lebih baik lagi buat kamu dan hubungan kita.\n\nAku sayang kamu dan nggak mau kehilangan kamu.`;
+            if (tambahan) {
+                pesan += `\n\n${tambahan}`;
+            }
+            pesan += `\n\nMaafin aku ya, sayang ❤️`;
+            document.getElementById('resultMaaf').innerText = pesan;
+            document.getElementById('resultMaaf').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
